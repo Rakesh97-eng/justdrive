@@ -1,0 +1,31 @@
+.selectedinfocontainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+}
+
+.infochild{
+    width: 30%;
+    display: flex;
+}
+
+.infochild>span{
+
+    font-weight: bold;
+    color: red;
+    width: 50%;
+}
+
+.infogetbtn{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    margin: 2%;
+    border: none;
+    background-color: rgb(144, 144, 234);
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+    }

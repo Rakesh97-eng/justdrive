@@ -1,0 +1,97 @@
+.approve1-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: auto;
+}
+
+.approve1-box {
+
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto ;
+    gap: 40px 40px;
+    top: 12%;
+    left:20%;
+}
+
+.approve1 {
+    background-color: whitesmoke;
+    height: 40vh;
+    width: 75vw;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px 2px;
+    font-family: bruno ace;
+    position: relative;
+}
+
+
+.approve1-head,.approve1-content1,.approve1-content2,.approve1-content3,.approve1-content4,
+.approve1-content5,.approve1-content6,.image,.approve1-button,.buttons
+{
+position: absolute;
+}
+
+.approve1-head,.approve1-content1,.approve1-content2,.approve1-content3,.approve1-content4,
+.approve1-content5,.approve1-content6,.buttons
+{
+
+left:45%;
+}
+
+.image
+{
+    top:10%;
+    height:35vh;
+    width:55vh;
+    left:2%
+}
+
+.buttons{
+    left:20%;
+}
+.approve1-head {
+    top:10%;
+    font-size: 35px;
+}
+
+.approve1-content1 {
+    top:20%;
+}
+
+.approve1-content2 {
+    top:40%;
+}
+
+.approve1-content3 {
+    top:50%;
+}
+
+.approve1-content4 {
+    top:60%;
+}
+
+.verify1 {
+    
+}
+
+.approve1-content5 {
+    top:70%;
+}
+
+.verify2 {
+    
+}
+
+.approve1-content6 {
+    top:80%;
+}
+
+.verify3 {
+}
+    
+
+.approve1-button {
+    top:85%;
+    left:85%;
+}
