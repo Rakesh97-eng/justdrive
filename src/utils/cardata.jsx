@@ -67,3 +67,19 @@ export const CarData = [
     },
 
 ]
+
+
+export const BreadCrumbData = [
+    {
+        title:"Home",
+        path:"/allcars"
+    },
+    {
+        title:"Selectedcar",
+        path:"/selectedcars"
+    },
+    {
+        title:"Detail",
+        path:"/allcars"
+    },
+]

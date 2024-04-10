@@ -38,6 +38,7 @@ const leftArrowStyles = {
 const sliderStyles = {
   position: "relative",
   height: "100%",
+  width:"100%"
 };
 
 const dotsContainerStyles = {
@@ -85,18 +86,19 @@ const ImageSlider = ({ slides=[a1,a2,a1,a1] }) => {
   const slideStylesWidthBackground = {
     ...slideStyles,
     backgroundImage: `url(${slides[currentIndex]})`,
+
   };
 
   return (
     <div  style={sliderStyles}>
-      <div style={{width:"50%"}}>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
+      {/* <div style={{width:"100%",height:"50vh"}}> */}
+        {/* <div onClick={goToPrevious} style={leftArrowStyles}>
           ❰
         </div>
         <div onClick={goToNext} style={rightArrowStyles}>
           ❱
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       <div style={slideStylesWidthBackground}></div>
       <div style={dotsContainerStyles}>
         {slides.map((slide, slideIndex) => (

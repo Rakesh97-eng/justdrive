@@ -1,9 +1,10 @@
 .selectedinfocontainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
     position: relative;
+    width: 100%;
 }
 
 .infochild{
@@ -24,8 +25,81 @@
     right: 10px;
     margin: 2%;
     border: none;
-    background-color: rgb(144, 144, 234);
+    background-color:rgb(21 123 203);
     padding: 5px 10px;
     border-radius: 5px;
     
     }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        
+      }
+
+      
+      .image-with-border {
+        transition: transform .2s; 
+        border: 2px solid  #007bd3;
+        margin: 5px;
+        height: 100px;
+        object-fit: contain;
+        width: 100px;
+        cursor: pointer;
+      }
+
+      .imgcontainer-selected{
+        display: flex;
+        justify-content: center;
+        --b: 2px;  /* border thickness*/
+        --s: 50px; /* size of the corner*/
+        --g: 10px; /* the gap*/
+        --c: #157bcb; 
+        
+        padding: calc(var(--b) + var(--g));
+        background-image:
+          conic-gradient(from  90deg at top    var(--b) left  var(--b),#0000 25%,var(--c) 0),
+          conic-gradient(from -90deg at bottom var(--b) right var(--b),#0000 25%,var(--c) 0);
+        background-position:
+          var(--_p,0%) var(--_p,0%),
+          calc(100% - var(--_p,0%)) calc(100% - var(--_p,0%));
+        background-size: var(--s) var(--s);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: 
+          background-position .3s var(--_i,.3s), 
+          background-size .3s calc(.3s - var(--_i,.3s));
+      }
+
+      .img-info-selected{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      
+      }
+
+      .image-item {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .fade-in {
+        opacity: 1;
+      }
+
+      
+
+
+      .image-with-border:hover{
+        transform:  scale(1.1);
+        border-color: black; 
+      }
+      .imgcontainer-selected:hover{
+        background-size: calc(100% - var(--g)) calc(100% - var(--g));
+  --_p: calc(var(--g)/2);
+  --_i: 0s;
+      
+        
+      }
