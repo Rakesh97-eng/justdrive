@@ -1,3 +1,4 @@
+import { FaCalendarAlt } from "react-icons/fa"
 import img1 from "../assets/p1.png"
 import img2 from "../assets/p2.png"
 import img3 from "../assets/p3.png"
@@ -81,5 +82,21 @@ export const BreadCrumbData = [
     {
         title:"Detail",
         path:"/allcars"
+    },
+]
+
+
+export const CalendarData=[
+    {
+        icon:<FaCalendarAlt fontSize="20"/>,
+        label:"Pick-Up :",
+        id:"startDate"
+
+    },
+    {
+        icon:<FaCalendarAlt fontSize="20"/>,
+        label:"Drop-of :",
+        id:"endDate"
+
     },
 ]

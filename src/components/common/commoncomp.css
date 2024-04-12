@@ -16,38 +16,56 @@
 }
 
 .card-image{
-    height: 100%;
-    width: 100%;
+    height: 20vh;
+    width: 15rem;
     object-fit: contain;
 }
 
-.card-container:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.card--img-container{
+  /* background-color: wheat !important; */
 }
 
-
-
+/* .active{
+  background-color:inherit !important;
+  box-shadow: "none" !important;
+} */
+.carousel-item.active {
+  display: block;
+  background: white;
+  box-shadow: none;
+}
 .card-container{
-    background-image: linear-gradient(
-        to right,
-        #b4bdc1,
-        #e1e9ec 50%,
-        #ececec 50%
-      );
-      background-size: 200% 100%;
-      background-position: -100%;
-      -webkit-background-clip: text;
-      /* -webkit-text-fill-color: transparent; */
-      transition: all 0.3s ease-in-out;
-}
+  background-image: linear-gradient(
+    to right,
+    #1b7bc8,
+    #a0bbc5 50%,
+    #fdfdfd 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    /* -webkit-background-clip: text; */
+    
+    /* transition: all  0.3s ease-in-out; */
+    
+    
+  }
+  .card-container:hover{
+      transform: scale(1.1);
+      cursor: pointer;
+      background-position: 0;
+      /* color: white !important; */
+  }
+  .card-container:hover {
+    /* color: white !important; */
+  }
+
 .card-container:hover::before {
-    /* width: 100%; */
     border-radius: 15px;
+    width: 100%;
   }
   .card-container:before {
     content: '';
-    background: #2a87a9;
+    /* background: #2a87a9; */
     display: block;
     position: absolute;
     bottom: -3px;
@@ -55,11 +73,14 @@
     width: 0;
     height: 3px;
     border-radius: 15px;
+    /* transition: width 0.3s ease-in-out; */
+  }
+  
+  .card-container::after{
+    -webkit-text-fill-color: white;
+    
   }
 
-  .card-container:hover {
-    background-position: 0;
-   }
 
    /* Modal style */
 
@@ -76,3 +97,94 @@
     align-items: center;
     
    }
+
+
+   /* input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+} */
+
+input[type="date"] {
+  position: relative;
+}
+
+/* create a new arrow, because we are going to mess up the native one
+see "List of symbols" below if you want another, you could also try to add a font-awesome icon.. */
+input[type="date"]:after {
+  /* content: "\25BC";  */
+  color: #555;
+  padding: 0 5px;
+}
+
+/* change color of symbol on hover */
+/* input[type="date"]:hover:after {
+  color: #bf1400;
+} */
+
+/* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+  
+}
+
+input:focus{
+  outline: none;
+}
+
+/* adjust increase/decrease button */
+input[type="date"]::-webkit-inner-spin-button {
+  z-index: 1;
+}
+
+/* adjust clear button */
+input[type="date"]::-webkit-clear-button {
+   z-index: 1;
+}
+
+.calendar-textbox{
+  padding: 10px !important;
+  border-radius: 5px;
+  /* height: 70px; */
+  /* width: 200px; */
+  /* border-color: rgb(122, 16, 16); */
+  /* width: max-content; */
+  /* background-color: #0d7bcf; */
+  margin: 2px;
+  background-image: linear-gradient(to right, #0d7bcf, #afb5bb);
+
+}
+
+.calendar-textbox:hover{
+  background-color: #0d7bcf; 
+}
+
+.cal-textdiv{
+  /* background-color: rgb(13, 123, 207); */
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.cal-input{
+  border-radius: 5px;
+  border: none;
+  height: 100%;
+  padding: 4px;
+}

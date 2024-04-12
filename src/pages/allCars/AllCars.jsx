@@ -7,14 +7,19 @@ import { Container, Row } from "react-bootstrap";
 import p1 from "../../assets/p1.png"
 import p2 from "../../assets/p2.png"
 import p3 from "../../assets/p3.png"
+import {useDispatch} from "react-redux";
 import AllCarsHeader from "../../components/allCarHeader/AllCarsHeader";
+import { addcardetails } from "../../redux/slice/userslice";
 const AllCars = ()=>{
     const [cardata,setCarData] = useState(CarData);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     let imgData = [p1,p2,p3]
     const handleCard = (id)=>{
+        dispatch(addcardetails({data:id}))
         navigate('/selectedcars',{state:{id:id,img:imgData}})
     }
+
 
     return (
         <>

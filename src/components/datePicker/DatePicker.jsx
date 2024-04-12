@@ -2,8 +2,8 @@ import moment from "moment/moment";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./DatePicker.css";
-
-import { FaCalendarAlt } from "react-icons/fa";
+import { CalendarData } from "../../utils/cardata";
+import { CalendarComp } from "../common/calendarcomp";
 const ChooseDate = () => {
   const [selectedDate, setSelectedDate] = useState({
     startDate: "",
@@ -11,6 +11,7 @@ const ChooseDate = () => {
   });
   const changedate = (event) => {
     const { name, value } = event.target;
+    console.log("nameee", name);
     if (name !== "startDate") {
       if (!moment(value).isAfter(selectedDate.startDate, "day")) {
         console.log("okkkk");
@@ -25,50 +26,11 @@ const ChooseDate = () => {
   return (
     <>
       {/* <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} /> */}
-      <Container style={{fontFamily:"serif",fontWeight:"bold"}}>
-        <Row>
-          <Col className="calendar-textbox" >
-          <div style={{display:"flex",justifyContent:"space-around"}} >
-            <div 
-            className="cal-textdiv"
-            
-            >
-              <FaCalendarAlt fontSize="20" />
-              PicK-Up :
-            </div>
-            <input
-              type="date"
-              className="cal-input"
-              value={selectedDate.startDate}
-              name="startDate"
-              onChange={(e) => changedate(e)}
-              placeholder="Select date"
-            />
-            </div>
-          </Col>
-          </Row>
-          <Row>
-          <Col className="calendar-textbox" >
-          <div style={{display:"flex",justifyContent:"space-around"}} >
-            <div 
-            className="cal-textdiv"
-            
-            >
-              <FaCalendarAlt fontSize="20" />
-              Drop-of :
-            </div>
-            <input
-              type="date"
-              className="cal-input"
-              value={selectedDate.endDate}
-              name="endDate"
-              onChange={(e) => changedate(e)}
-              placeholder="Select date"
-            />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+     
+       
+      {CalendarData.map((data)=>{
+        return <CalendarComp data={data} compdata={selectedDate} onChange={changedate}/>
+      })}
     </>
   );
 };

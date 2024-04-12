@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap"
-// import ChooseArea from "../../components/choosearea/ChooseArea"
+import BookingTab from "../../components/bookingTabs/BookingTab"
+import ChooseArea from "../../components/choosearea/ChooseArea"
 import ChooseDate from "../../components/datePicker/DatePicker"
 
 const BookCar = ()=>{
@@ -8,15 +9,15 @@ const BookCar = ()=>{
             <h2>Book Car</h2>
             <Container>
                 <Row>
-                    <Col>
-                    <div>
-                        MAp Part
-                    </div>
-                        {/* <ChooseArea/> */}
+                    {/* <Col>
+                        <ChooseArea/>
                     </Col>
                     <Col>
                         <ChooseDate/>
-                    </Col>
+                    </Col> */}
+                 
+                    <BookingTab chooseData={<ChooseDate />} />
+                    
                 </Row>
             </Container>
         </>

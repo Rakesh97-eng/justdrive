@@ -4,6 +4,7 @@ import Manage from "../components/Manage";
 import AllCars from "../pages/allCars/AllCars";
 import BookCar from "../pages/bookCar/Bookcar";
 import SelectedCar from "../pages/selectedCar/selectedCar";
+import { MdDashboard, MdFactCheck } from "react-icons/md";
 
 export const routesinfo = [
     {
@@ -28,24 +29,25 @@ export const routesinfo = [
 ]
 
 export const menudata = [
-    {   icon:"MdDashboard",
+    {   icon:<MdDashboard/>,
         label:"DASHBOARD",
         path:"/dashboard"
     },
     {
-        icon:"MdFactCheck",
+        icon:<MdFactCheck/>,
         label:"APPROVAL",
         path:"/approval"
     },
     {
-        icon:"MdFactCheck",
+        icon:<MdFactCheck/>,
         label:"MANAGE",
         path:"/manage"
     },
     {
-        icon:"MdFactCheck",
+        icon:<MdFactCheck/>,
         label:"CARS",
         path:"/allcars"
     },
 
 ]
+

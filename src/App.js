@@ -3,6 +3,9 @@ import Login from "./components/Login";
 import {Routes,Route} from "react-router-dom";
 import Navbar from './components/Navbar';
 import { routesinfo } from './utils/routedata';
+import store from './redux/carstore';
+import {Provider} from 'react-redux';
+
 
 function App() {
  const GetRoutes =(routedetail)=>{
@@ -10,7 +13,7 @@ function App() {
     return <Route path={path} element={elementname}></Route>
  }
 
-  return (<>
+  return (<Provider store={store}>
    <Routes>
     <Route exact path="/login" element ={<Login/>}/>
     <Route path='/' element={<Navbar/>}>
@@ -19,7 +22,7 @@ function App() {
       })}
     </Route>
    </Routes>
-   </>);
+   </Provider>);
 }
 
 export default App;
